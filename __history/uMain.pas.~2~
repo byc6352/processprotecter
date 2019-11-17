@@ -1,0 +1,40 @@
+unit uMain;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs,
+  uFuncs, Vcl.ComCtrls, Vcl.ExtCtrls, Vcl.StdCtrls;
+
+type
+  TForm1 = class(TForm)
+    Panel1: TPanel;
+    btnStart: TButton;
+    memoOut: TMemo;
+    Timer1: TTimer;
+    StatusBar1: TStatusBar;
+    btnClose: TButton;
+    procedure Timer1Timer(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.Timer1Timer(Sender: TObject);
+var
+  s:ansiString;
+begin
+  uFuncs.GetProcessesInfo2000(s,false);
+  memoOut.Lines.Text:=s;
+end;
+
+end.

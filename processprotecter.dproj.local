@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+  <Transactions>
+    <Transaction>2019/11/17 16:14:05.780,=D:\works\delphi\Unit1.pas</Transaction>
+    <Transaction>2019/11/17 16:15:28.912,D:\works\delphi\processprotecter\uMain.pas=D:\works\delphi\Unit1.pas</Transaction>
+    <Transaction>2019/11/17 16:15:28.912,D:\works\delphi\processprotecter\uMain.dfm=D:\works\delphi\Unit1.dfm</Transaction>
+    <Transaction>2019/11/17 16:15:46.255,D:\works\delphi\processprotecter\processprotecter.dproj=D:\works\delphi\Project1.dproj</Transaction>
+    <Transaction>2019/11/17 16:27:36.806,=D:\works\delphi\processprotecter\Unit1.pas</Transaction>
+    <Transaction>2019/11/17 16:27:52.165,D:\works\delphi\processprotecter\uFuncs.pas=D:\works\delphi\processprotecter\Unit1.pas</Transaction>
+    <Transaction>2019/11/17 16:45:13.621,=D:\works\delphi\processprotecter\Unit1.pas</Transaction>
+    <Transaction>2019/11/17 16:45:45.996,D:\works\delphi\processprotecter\uConfig.pas=D:\works\delphi\processprotecter\Unit1.pas</Transaction>
+  </Transactions>
+</BorlandProject>

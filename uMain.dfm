@@ -1,0 +1,88 @@
+object fMain: TfMain
+  Left = 0
+  Top = 0
+  Caption = #36827#31243#20445#25252#22120'v1.00'
+  ClientHeight = 663
+  ClientWidth = 1073
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  OnShow = FormShow
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 1073
+    Height = 33
+    Align = alTop
+    TabOrder = 0
+    object btnStart: TButton
+      Left = 16
+      Top = 2
+      Width = 75
+      Height = 25
+      Caption = #24320#22987
+      TabOrder = 0
+      OnClick = btnStartClick
+    end
+    object btnClose: TButton
+      Left = 992
+      Top = 2
+      Width = 75
+      Height = 25
+      Caption = #36864#20986
+      TabOrder = 1
+      OnClick = btnCloseClick
+    end
+    object Button1: TButton
+      Left = 103
+      Top = 2
+      Width = 75
+      Height = 25
+      Caption = #20851#38381
+      TabOrder = 2
+      OnClick = Button1Click
+    end
+  end
+  object memoOut: TMemo
+    Left = 0
+    Top = 33
+    Width = 1073
+    Height = 611
+    Align = alClient
+    ScrollBars = ssBoth
+    TabOrder = 1
+    ExplicitTop = 41
+    ExplicitHeight = 603
+  end
+  object StatusBar1: TStatusBar
+    Left = 0
+    Top = 644
+    Width = 1073
+    Height = 19
+    Panels = <
+      item
+        Width = 500
+      end
+      item
+        Width = 50
+      end
+      item
+        Width = 50
+      end>
+    ExplicitLeft = 328
+    ExplicitTop = 208
+    ExplicitWidth = 0
+  end
+  object Timer1: TTimer
+    Interval = 10000
+    OnTimer = Timer1Timer
+    Left = 312
+    Top = 208
+  end
+end

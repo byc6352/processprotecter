@@ -1,0 +1,53 @@
+unit uFuncs;
+
+interface
+uses
+  windows;
+
+function RunFile(name:pansiChar;ShowType:DWORD;suspended:BOOL=false;bCMD:BOOL=false):PROCESS_INFORMATION;
+implementation
+
+function RunFile(name:pansiChar;ShowType:DWORD;suspended:BOOL=false;bCMD:BOOL=false):PROCESS_INFORMATION;
+var
+  si:STARTUPINFOA;
+  suspend:dword;
+begin
+  si.cb:=sizeof(si);
+  si.lpReserved:=nil;
+  si.lpDesktop:=nil;     //window station and desktop
+  si.lpTitle:=nil;      //console title
+  si.dwX:=0;si.dwY:=0; //new window pos
+  si.dwXSize:=0;si.dwYSize:=0;  //new window size
+  //si.dwXCountansiChars:=0;si.dwYCountansiChars:=0;//console ansiCharacter columns rows
+  si.dwFillAttribute:=0; //console text and background colors
+  si.dwFlags:=STARTF_FORCEOFFFEEDBACK or STARTF_USESHOWWINDOW; //cursor off ;wShowWindow;
+  si.wShowWindow:=ShowType;
+  si.cbReserved2:=0;si.lpReserved:=nil;
+  si.hStdInput:=0;si.hStdOutput:=0;si.hStdError:=0; //
+  result.hProcess:=0;result.hThread:=0;result.dwProcessId:=0;result.dwThreadId:=0;
+  if SUSPENDED then suspend:=CREATE_SUSPENDED else suspend:=0;
+
+  if bCMD then
+      CreateProcessA(nil,
+        name,//lpCommandLine
+        nil,     //lpProcessAttributes
+        nil,     //lpThreadAttributes
+        false,   //bIneritHandles
+        suspend, //dwCreationFlags  CREATE_SUSPENDED
+        nil,     //lpEnvironment
+        nil,     //lpCurrentDirectory
+        si,      //lpStartupInfo
+        result)     //lpProcessInformation
+  else
+    CreateProcessA(name,
+        nil,     //lpCommandLine
+        nil,     //lpProcessAttributes
+        nil,     //lpThreadAttributes
+        false,   //bIneritHandles
+        suspend, //dwCreationFlags  CREATE_SUSPENDED
+        nil,     //lpEnvironment
+        nil,     //lpCurrentDirectory
+        si,      //lpStartupInfo
+        result);     //lpProcessInformation
+end;
+end.
