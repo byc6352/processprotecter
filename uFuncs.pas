@@ -19,6 +19,8 @@ procedure processProtectThread(p:pointer);stdcall;
 procedure startProtect(filename:ansiString);
 procedure stopProtect();
 implementation
+uses
+  uLog;
 procedure stopProtect();
 begin
   ProcessProtecter.bProtect:=false;
@@ -40,6 +42,7 @@ begin
   pp:=p;
   while pp^.bProtect do
   begin
+    uLog.Log('----------------Æô¶¯----------');
     pi:=RunFile(pp^.filename,sw_show);
     WaitForSingleObject( pi.hProcess, INFINITE );
   end;
